@@ -1,9 +1,11 @@
 /// <reference types = "cypress"/>
 require('cypress-xpath')
-import BasePage from '../../PageObjects/BasePage'
+import BasePage from '../../PageObjects/pages/BasePage'
 const base = new BasePage()
-import locator from "../../PageObjects/locator"
+import locator from "../../PageObjects/utils/locator/locator"
 const locator1 = new locator()
+
+
 describe("test_RBS_564_unauthorized_should_see_hover_over_menu_whenever_user_points_the_User_icon_by_mouse",()=>{
     afterEach("waiting",() => {
         base.waiting_for_certain_time(6000)

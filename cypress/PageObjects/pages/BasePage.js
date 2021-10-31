@@ -1,7 +1,7 @@
 // import locator from "locator"
 require('cypress-xpath')
 import "cypress-real-events/support";
-import locator from "./locator"
+import locator from  "../utils/locator/locator"
 const locator1 = new locator()
 class BasePage
 {
@@ -45,9 +45,9 @@ class BasePage
     {
         cy.wait(value)
     }
-    clicking_on_contains_text(idname)
+    clicking_on_contains_text(text)
     {
-        cy.contains(idname).click()
+        cy.contains(text, { matchCase: false }).click({ force: true })
     }
     clicking(value)
     {
