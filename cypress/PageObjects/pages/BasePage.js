@@ -37,6 +37,14 @@ class BasePage
         field.type(value)
         
     }
+    writting_on_input_with_xpath(path,value)
+    {   
+        // cy.get('[data-test=submitIsVisible]', { timeout: 10000 }).should('be.visible');
+        const field=cy.xpath(path, { timeout: 10000 }).should('be.visible')
+        field.clear()
+        field.type(value)
+        
+    }
     press_enter(path)
     {
         cy.get(path).type('{enter}')
@@ -90,13 +98,21 @@ class BasePage
     }
     select_dropdown_menu(path,option)
     {
-        cy.get(path).select(option)
+        cy.xpath(path).select(option)
     }
     element_has_length(path,find,length)
     {
         cy.get(path).find(find).should('have.length', length)
     }
-
+    get_attribute_value (locator,attribute_name)
+    {
+        var text = cy.xpath(locator).invoke('attr',attribute_name)
+        return text;
+    }
+    select_option_from_the_list(path, value)
+    {
+        cy.xpath(path).select(value)
+    }
 }
 
 export default BasePage
