@@ -26,6 +26,7 @@ class locator
 
     // LOGIN_PAGE_LOCATOR
     login_header = "//div[@class='modal-title h4']"
+    create_an_account_option = "//button[normalize-space()='Create An Account']"
 }
 
 

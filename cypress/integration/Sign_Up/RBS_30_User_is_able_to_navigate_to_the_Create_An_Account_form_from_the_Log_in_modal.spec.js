@@ -30,27 +30,12 @@ describe("RBS_30_User_is_able_to_navigate_to_the_Create_An_Account_form_from_the
     })
     it ("Clicking on Login Option",()=>{
         SignIn_page.click_on_login_option()
-
     })
-   
 
-    it("Hovering Over create account icon",()=>
+    it("Clicking on create an account option from the login modal",()=>
     {
-        base.clicking_on_contains_text("Create An Account")
+        SignIn_page.click_on_create_account_option();
 
-    })
-
-    it("Hovering Over create account icon",()=>
-    {
-        base.clicking_on_contains_text("Create An Account")
-
-    })
-    it("click on CMS USER",()=>
-    {
-        base.clicking_on_contains_text(navigation_menu.CMS_USER)
-    })
-    it ("Sign Up with Valid Field", ()=>{
-        SignUp_page.sign_up(SignUp_page.first_name, SignUp_page.last_name, SignUp_page.phone_number, SignUp_page.employee_id, SignUp_page.email, SignUp_page.pass, SignUp_page.pass, SignUp_page.gender)
     })
 
 })
